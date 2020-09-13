@@ -2,7 +2,7 @@ G = 0
 A = 0
 T = 0
 C = 0
-with open ('Genomic sequence Mus musculus.fasta') as seq:
+with open(input("Welk bestand wilt u analyseren?: ")) as seq:
     datalist = []
     for line in seq:
         if line.startswith('>'):
@@ -23,7 +23,7 @@ with open ('Genomic sequence Mus musculus.fasta') as seq:
             
             lengte = G + A + T + C
             gc_count = data[1].count('G') + data[1].count('C') 
-            if gc_count >1:
+            if gc_count >0:
                 gc_fraction = gc_count / lengte
-                print("GC%: ", gc_fraction * 100)
+                print("GC%: ", round(gc_fraction * 100,2))
 
